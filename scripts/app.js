@@ -7,4 +7,22 @@ var template;
 $(document).on("ready", function() {
 
 
+	$.ajax({
+		method: 'GET',
+		url: weekly_quakes_endpoint,
+		success: onSuccess,
+		dataType: 'json'
+	});
+
+
+function onSuccess (json) {
+	var source = $('#earthquake-list').html();
+	var template = Handlebars.compile(source);
+	var earthquakesHtml = template ({
+		earthquakes: json.features
+	});
+	$('#info').append(earthquakesHtml);
+}
+
+
 });
