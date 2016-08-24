@@ -30,27 +30,8 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div id="map">
-						    <script type="text/javascript">
+					    
 
-								var map;
-								function initMap() {
-									var myLatLng = {lat: 37.38, lng: -122.44};
-								 	map = new google.maps.Map(document.getElementById('map'), {
-								    	center: myLatLng,
-								    	zoom: 8
-									});
-								  
-								  var marker = new google.maps.Marker( {
-								            position: myLatLng,
-								            map: map,
-								            title: 'Hello World!'
-								    });
-								}
-
-						    </script>
-						    <script async defer
-						      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg&callback=initMap">
-						    </script>
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -59,8 +40,7 @@
 						<!-- <p>M 4.2 - 1km ESE of Fontana, California / 123 hours ago </p> -->
 						<script id="earthquake-list" type="text/x-handlebars-template">
 						{{#each earthquakes}}
-							<p>M {{properties.mag}} - {{properties.place}}</p>
-
+							<p>M {{properties.mag}} - {{properties.place}}</p>	
 						{{/each}}
 						</script>
 
